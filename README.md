@@ -1,5 +1,6 @@
 # FlexibleAlertDialog
 FlexibleAlertDialog is an easy customizable, flexible Android Library, helps you to show Alert Dialog inside any View (FrameLayout) **not just in fullscreen**.
+[![](https://jitpack.io/v/hasanaga/FlexibleAlertDialog.svg)](https://jitpack.io/#hasanaga/FlexibleAlertDialog)
 
 ## Getting Started
 ### Installing
@@ -33,7 +34,7 @@ dependencyResolutionManagement {
 Step 2. Add the dependency
 ```
 dependencies {
-    implementation 'com.github.hasanaga:FlexibleAlertDialog:0.0.1'
+    implementation 'com.github.hasanaga:FlexibleAlertDialog:0.0.2'
 }
 ```
 
