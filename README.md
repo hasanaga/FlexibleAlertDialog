@@ -1,5 +1,5 @@
 # FlexibleAlertDialog
-FlexibleAlertDialog is an easy customizable, flexible Android Library, helps you to show Alert Dialog inside any View (FrameLayout)
+FlexibleAlertDialog is an easy customizable, flexible Android Library, helps you to show Alert Dialog inside any View (FrameLayout) **not just in fullscreen**.
 
 ## Getting Started
 ### Installing
