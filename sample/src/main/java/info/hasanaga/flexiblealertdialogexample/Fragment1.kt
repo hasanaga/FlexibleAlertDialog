@@ -68,6 +68,25 @@ class Fragment1 : Fragment() {
             }
             .setEvent {
 
+
+                onCreate = {
+
+                }
+
+                onCreateView = { view ->
+
+                }
+
+                onPause = {
+
+                }
+                onDestroy = {
+
+                }
+
+                onResume = {
+
+                }
                 onClickButton = { buttonType, view ->
 
                     if(buttonType == FlexibleAlertDialog.ButtonType.PositiveButton){
