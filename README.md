@@ -50,9 +50,9 @@ FlexibleAlertDialog.Builder(requireContext())
 
 **Sample 2.** Alert Dialog with custom view and operation.
 
-1. Create ```R.layout.uppercase_layout```.
+Create  [```R.layout.uppercase_layout```](sample/src/main/res/layout/uppercase_layout.xml).
 
-2. 
+
 ```
 FlexibleAlertDialog.Builder(requireContext())
     .setTitle("Make Uppercase")
@@ -63,7 +63,21 @@ FlexibleAlertDialog.Builder(requireContext())
         it.dismiss()
     }
     .setEvent {
+    
+        onCreate = {
+        }
 
+        onCreateView = { view ->
+        }
+
+        onPause = {
+        }
+        onDestroy = {
+        }
+
+        onResume = {
+        }
+        
         onClickButton = { buttonType, view ->
 
             if(buttonType == FlexibleAlertDialog.ButtonType.PositiveButton){
@@ -77,8 +91,90 @@ FlexibleAlertDialog.Builder(requireContext())
     }
     .show()
 ```
-## Screenshots
 
+**Sample 3.** Simple Calculator with custom view and operation.
+Create  [```R.layout.custom_layout```](sample/src/main/res/layout/custom_layout.xml).
+```
+FlexibleAlertDialog.Builder(requireContext())
+            .setTitle("Calculator with custom View")
+            .setParent(R.id.frame_layout)
+            .setFragmentManager(childFragmentManager)
+            .setPositiveButton("Close") {
+                it.dismiss()
+            }
+            .setView(R.layout.custom_layout)
+            .setEvent {
+
+                var lastResult = ""
+
+                fun calculate(param1: String, param2: String, operation: Char): String {
+
+                    if (param1.isEmpty() || param2.isEmpty()) return "Invalid params";
+
+                    val intParam1: Int = try {
+                        param1.toInt()
+                    } catch (e: NumberFormatException) {
+                        return "Invalid Param1"
+                    }
+                    val intParam2: Int = try {
+                        param2.toInt()
+                    } catch (e: NumberFormatException) {
+                        return "Invalid Param2"
+                    }
+
+                    return when (operation) {
+                        '+' -> "${intParam1.toFloat() + intParam2}"
+                        '-' -> "${intParam1.toFloat() - intParam2}"
+                        '*' -> "${intParam1.toFloat() * intParam2}"
+                        '/' -> "${if (intParam2 == 0) 0F else intParam1.toFloat() / intParam2}"
+                        else -> ""
+                    }
+                }
+
+                onCreateView = {
+
+                    val num1: EditText = it.findViewById(R.id.number1);
+                    val num2: EditText = it.findViewById(R.id.number2);
+                    val result: TextView = it.findViewById(R.id.result);
+
+                    it.findViewById<Button>(R.id.addition).setOnClickListener {
+                        lastResult = calculate(num1.text.toString(), num2.text.toString(), '+')
+                        result.text = lastResult
+                    }
+
+                    it.findViewById<Button>(R.id.subtraction).setOnClickListener {
+                        lastResult = calculate(num1.text.toString(), num2.text.toString(), '-')
+                        result.text = lastResult
+                    }
+
+                    it.findViewById<Button>(R.id.division).setOnClickListener {
+                        lastResult = calculate(num1.text.toString(), num2.text.toString(), '/')
+                        result.text = lastResult
+                    }
+
+                    it.findViewById<Button>(R.id.multiplication).setOnClickListener {
+                        lastResult = calculate(num1.text.toString(), num2.text.toString(), '*')
+                        result.text = lastResult
+                    }
+
+                }
+
+                onClickButton = { buttonType, _ ->
+
+                    if (buttonType == FlexibleAlertDialog.ButtonType.PositiveButton) {
+                        resultTextView.text = lastResult
+                    }
+                }
+
+
+            }
+            .show()
+```
+
+
+## Screenshots
+![Animation](/docs/animation.gif)
+![Screenshot 1](/docs/screenshot_1.png) ![Screenshot 2](/docs/screenshot_2.png)
 
 ## Authors
 
