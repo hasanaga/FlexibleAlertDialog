@@ -5,7 +5,7 @@ FlexibleAlertDialog is an easy customizable, flexible Android Library, helps you
 ### Installing
 
 Step 1. Add it in your root ```build.gradle``` at the end of repositories:
-```
+```gradle
 allprojects {
     repositories {
         ...
@@ -15,7 +15,7 @@ allprojects {
 ```
 OR
 In Android Studio Bumblebee (2021.1.1) version add it ```settings.gradle```.
-```
+```gradle
 pluginManagement {
     repositories {
         ...
@@ -31,7 +31,7 @@ dependencyResolutionManagement {
 ```
 
 Step 2. Add the dependency
-```
+```gradle
 dependencies {
     implementation 'com.github.hasanaga:FlexibleAlertDialog:0.0.2'
 }
@@ -41,7 +41,7 @@ dependencies {
 After importing the library you can use FlexibleAlertDialog to show alert dialog.
 
 Add the ```FrameLayout``` where you want to display the Alert Dialog.
-```
+```xml
 <FrameLayout
     android:id="@+id/frame_layout"
     android:layout_width="match_parent"
@@ -49,7 +49,7 @@ Add the ```FrameLayout``` where you want to display the Alert Dialog.
 ```
 
 **Sample 1.** Simple Alert Dialog with single message and buttons.
-```
+```kotlin
 FlexibleAlertDialog.Builder(requireContext())
     .setTitle("Title")
     .setMessage("Message")
@@ -69,7 +69,7 @@ FlexibleAlertDialog.Builder(requireContext())
 Create  [```R.layout.uppercase_layout```](sample/src/main/res/layout/uppercase_layout.xml).
 
 
-```
+```kotlin
 FlexibleAlertDialog.Builder(requireContext())
     .setTitle("Make Uppercase")
     .setParent(R.id.frame_layout)
@@ -110,7 +110,7 @@ FlexibleAlertDialog.Builder(requireContext())
 
 **Sample 3.** Simple Calculator with custom view and operation.
 Create  [```R.layout.custom_layout```](sample/src/main/res/layout/custom_layout.xml).
-```
+```kotlin
 FlexibleAlertDialog.Builder(requireContext())
             .setTitle("Calculator with custom View")
             .setParent(R.id.frame_layout)
