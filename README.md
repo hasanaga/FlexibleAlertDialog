@@ -4,9 +4,25 @@ FlexibleAlertDialog is an easy customizable, flexible Android Library, helps you
 ## Getting Started
 ### Installing
 
-Step 1. Add it in your root build.gradle at the end of repositories:
+Step 1. Add it in your root ```build.gradle``` at the end of repositories:
 ```
 allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+OR
+In Android Studio Bumblebee (2021.1.1) version add it ```settings.gradle```.
+```
+pluginManagement {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+dependencyResolutionManagement {
     repositories {
         ...
         maven { url 'https://jitpack.io' }
