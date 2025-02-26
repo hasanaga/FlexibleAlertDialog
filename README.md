@@ -1,5 +1,21 @@
 # FlexibleAlertDialog
-FlexibleAlertDialog is an easily customizable, flexible Android Library, that helps you to show Alert Dialog inside any View (FrameLayout) **not just in fullscreen**.
+
+FlexibleAlertDialog is a highly customizable, flexible Android library written in Kotlin that simplifies displaying AlertDialogs within any view (FrameLayout) instead of just full-screen dialogs. This library is designed for Android developers who need a dynamic, versatile, and easy-to-integrate alert dialog solution.
+
+## Overview
+FlexibleAlertDialog lets you embed alert dialogs directly into your app’s layout. With a simple API, you can customize the title, message, buttons, and even add a custom view. Whether you need a simple message or a complex, interactive dialog, FlexibleAlertDialog offers the flexibility and ease-of-use that modern Android development demands.
+
+Keywords: Android library, AlertDialog, Android development, Kotlin, custom dialog, flexible alert dialog, UI component
+
+## Features
+Customizable Dialogs: Easily set titles, messages, and buttons.
+Custom Views: Embed custom layouts into your alert dialogs.
+Event Handling: Support for various dialog lifecycle events such as onCreate, onResume, onPause, and onDestroy.
+Flexible Integration: Display dialogs within any FrameLayout, not just full-screen.
+Easy Setup: Simple Maven installation via JitPack for quick integration.
+
+
+
 
 ## Getting Started
 ### Installing
